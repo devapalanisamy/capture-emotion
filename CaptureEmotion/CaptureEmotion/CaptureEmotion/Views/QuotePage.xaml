@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CaptureEmotion.Views.QuotePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    Title="Quote of the day">
+    <StackLayout
+        BackgroundColor="Yellow"
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand"
+        Orientation="Vertical"
+        Padding="20,20,20,20">
+        <Label HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="Life is good" FontSize="40"></Label>
+        <Label HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" Text="- Unknown" FontSize="15" FontAttributes="Italic"></Label>
+    </StackLayout>
+</ContentPage>

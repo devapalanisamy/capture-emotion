@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CaptureEmotion.Views.CapturePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    Title="Capture"
+    prism:ViewModelLocator.AutowireViewModel="True">
+    <StackLayout
+        Padding="15,15,15,15"
+        BackgroundColor="White"
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand">
+        <Label
+            FontSize="20"
+            HorizontalOptions="CenterAndExpand"
+            Text="How are you feeling today?"
+            TextColor="#282864" />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image
+                Grid.Row="0"
+                Grid.Column="0"
+                BackgroundColor="Transparent"
+                HeightRequest="150"
+                Source="enthu.png"
+                WidthRequest="120" />
+            <Image
+                Grid.Row="0"
+                Grid.Column="1"
+                BackgroundColor="Transparent"
+                HeightRequest="150"
+                Source="happy.png"
+                WidthRequest="120" />
+            <Image
+                Grid.Row="1"
+                Grid.Column="0"
+                BackgroundColor="Transparent"
+                HeightRequest="150"
+                Source="bored.png"
+                WidthRequest="120" />
+            <Image
+                Grid.Row="1"
+                Grid.Column="1"
+                BackgroundColor="Transparent"
+                HeightRequest="150"
+                Source="confused.png"
+                WidthRequest="120" />
+            <Image
+                Grid.Row="2"
+                Grid.Column="0"
+                BackgroundColor="Transparent"
+                HeightRequest="150"
+                Source="sad.png"
+                WidthRequest="120" />
+            <Image
+                Grid.Row="2"
+                Grid.Column="1"
+                BackgroundColor="Transparent"
+                HeightRequest="150"
+                Source="angry.png"
+                WidthRequest="120" />
+            <Image
+                Grid.Row="3"
+                Grid.Column="0"
+                BackgroundColor="Transparent"
+                HeightRequest="150"
+                Source="disappointed.png"
+                WidthRequest="120" />
+            <Image
+                Grid.Row="3"
+                Grid.Column="1"
+                BackgroundColor="Transparent"
+                HeightRequest="150"
+                Source="sulking.png"
+                WidthRequest="120" />
+        </Grid>
+    </StackLayout>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="History" />
+    </ContentPage.ToolbarItems>
+</ContentPage>
