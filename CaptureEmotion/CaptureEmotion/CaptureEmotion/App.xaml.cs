@@ -24,7 +24,7 @@ namespace CaptureEmotion
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/QuotePage");
+            await NavigationService.NavigateAsync("NavigationPage/CapturePage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
