@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="CaptureEmotion.Views.TimelinePage"
+             Title="Timeline">
+  <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10,10,10,10">
+        <ListView
+          x:Name="NamesList"
+          BackgroundColor="Transparent"
+          HasUnevenRows="True"
+          HorizontalOptions="CenterAndExpand"
+          ItemsSource="{Binding AnswersCollection}"
+          SeparatorColor="#282864">
+            <ListView.ItemTemplate>
+              <DataTemplate>
+                  <ViewCell>
+                      <StackLayout
+                          Padding="5,5,5,5"
+                          BackgroundColor="Transparent"
+                          Orientation="Horizontal">
+                          <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                              <Label
+                                  BackgroundColor="Transparent"
+                                  LineBreakMode="WordWrap"
+                                  Text="{Binding Emotion, StringFormat='You were feeling {0:N}'}"
+                                  VerticalOptions="CenterAndExpand" />
+                              <Label
+                                  BackgroundColor="Transparent"
+                                  LineBreakMode="WordWrap"
+                                  Text="{Binding MoreDetails, StringFormat='Because, {0:N}'}"
+                                  IsVisible="{Binding IsDetailsVisible}"
+                                  VerticalOptions="CenterAndExpand" />
+                                <Label
+                                  BackgroundColor="Transparent"
+                                  LineBreakMode="WordWrap"
+                                  Text="{Binding DateInfo}"
+                                  VerticalOptions="CenterAndExpand" />
+                            </StackLayout>
+                          <Image Source="{Binding Emotion}" HeightRequest="80" WidthRequest="50" HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+                  </ViewCell>
+              </DataTemplate>
+          </ListView.ItemTemplate>
+      </ListView>
+
+    </StackLayout>
+</ContentPage>

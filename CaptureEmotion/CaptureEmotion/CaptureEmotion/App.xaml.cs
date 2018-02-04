@@ -1,4 +1,5 @@
-﻿using Prism;
+﻿using CaptureEmotion.Services;
+using Prism;
 using Prism.Ioc;
 using CaptureEmotion.ViewModels;
 using CaptureEmotion.Views;
@@ -34,6 +35,10 @@ namespace CaptureEmotion
             containerRegistry.RegisterForNavigation<HomeTabPage>();
             containerRegistry.RegisterForNavigation<CapturePage>();
             containerRegistry.RegisterForNavigation<QuotePage>();
+
+            containerRegistry.Register<IRealmService,RealmService>();
+            containerRegistry.RegisterForNavigation<CommentsPage>();
+            containerRegistry.RegisterForNavigation<TimelinePage>();
         }
     }
 }

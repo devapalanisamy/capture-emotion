@@ -34,7 +34,7 @@
                 Orientation="Vertical"
                 VerticalOptions="Fill">
                 <StackLayout.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding EmotionTappedCommand}" />
+                    <TapGestureRecognizer Command="{Binding EmotionTappedCommand}" CommandParameter="joy"/>
                 </StackLayout.GestureRecognizers>
                 <Image
                     HeightRequest="120"
@@ -54,7 +54,7 @@
                 Orientation="Vertical"
                 VerticalOptions="Fill">
                 <StackLayout.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding EmotionTappedCommand}" />
+                    <TapGestureRecognizer Command="{Binding EmotionTappedCommand}" CommandParameter="fear" />
                 </StackLayout.GestureRecognizers>
                 <Image
                     BackgroundColor="Transparent"
@@ -75,7 +75,7 @@
                 Orientation="Vertical"
                 VerticalOptions="Fill">
                 <StackLayout.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding EmotionTappedCommand}" />
+                    <TapGestureRecognizer Command="{Binding EmotionTappedCommand}" CommandParameter="disgust"/>
                 </StackLayout.GestureRecognizers>
                 <Image
                     BackgroundColor="Transparent"
@@ -96,7 +96,7 @@
                 Orientation="Vertical"
                 VerticalOptions="Fill">
                 <StackLayout.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding EmotionTappedCommand}" />
+                    <TapGestureRecognizer Command="{Binding EmotionTappedCommand}" CommandParameter="sad"/>
                 </StackLayout.GestureRecognizers>
                 <Image
                     BackgroundColor="Transparent"
@@ -117,7 +117,7 @@
                 Orientation="Vertical"
                 VerticalOptions="Fill">
                 <StackLayout.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding EmotionTappedCommand}" />
+                    <TapGestureRecognizer Command="{Binding EmotionTappedCommand}" CommandParameter="anger"/>
                 </StackLayout.GestureRecognizers>
                 <Image
                     BackgroundColor="Transparent"
@@ -133,6 +133,6 @@
         </Grid>
     </StackLayout>
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="History" />
+        <ToolbarItem Text="Timeline" Command="{Binding TimelineTappedCommand}" />
     </ContentPage.ToolbarItems>
 </ContentPage>
