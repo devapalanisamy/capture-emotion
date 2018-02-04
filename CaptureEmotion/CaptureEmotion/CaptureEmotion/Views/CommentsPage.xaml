@@ -5,7 +5,7 @@
              xmlns:customControl="clr-namespace:CaptureEmotion.CustomControl;assembly=CaptureEmotion"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="CaptureEmotion.Views.CommentsPage"
-             Title="Feeling sad. Because..">
+             Title="{Binding Title}">
     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="15,15,15,15" BackgroundColor="LightBlue">
         <customControl:BorderlessEditor Text="{Binding Comment}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White"/>
       <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">

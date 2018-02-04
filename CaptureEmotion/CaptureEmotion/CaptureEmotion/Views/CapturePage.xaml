@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:behaviors="clr-namespace:Corcav.Behaviors;assembly=Corcav.Behaviors"
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
-    Title="Capture"
+    Title="Feelings Diary"
     prism:ViewModelLocator.AutowireViewModel="True">
     <StackLayout
         Padding="15,15,15,15"
@@ -29,21 +29,23 @@
             <StackLayout
                 Grid.Row="0"
                 Grid.Column="0"
-                HorizontalOptions="Fill"
                 IsVisible="True"
+                HeightRequest="100"
                 Orientation="Vertical"
-                VerticalOptions="Fill">
+                Padding="0,0,0,15">
                 <StackLayout.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding EmotionTappedCommand}" CommandParameter="joy"/>
+                    <TapGestureRecognizer Command="{Binding EmotionTappedCommand}" CommandParameter="joyful"/>
                 </StackLayout.GestureRecognizers>
                 <Image
-                    HeightRequest="120"
+                    HeightRequest="80"
                     IsVisible="True"
-                    Source="joy.png"
-                    WidthRequest="120" />
+                    Source="joyful.png"
+                    WidthRequest="80" />
                 <Label
+                    HeightRequest="30"
+                    VerticalOptions="Fill"
                     HorizontalTextAlignment="Center"
-                    Text="Joy"
+                    Text="Joyful"
                     TextColor="Black" />
             </StackLayout>
             <StackLayout
@@ -52,20 +54,22 @@
                 HorizontalOptions="Fill"
                 IsVisible="True"
                 Orientation="Vertical"
-                VerticalOptions="Fill">
+                VerticalOptions="Fill"
+                Padding="0,0,0,15">
                 <StackLayout.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding EmotionTappedCommand}" CommandParameter="fear" />
+                    <TapGestureRecognizer Command="{Binding EmotionTappedCommand}" CommandParameter="happy" />
                 </StackLayout.GestureRecognizers>
                 <Image
                     BackgroundColor="Transparent"
-                    HeightRequest="120"
+                    HeightRequest="80"
                     IsVisible="True"
-                    Source="fear.png"
-                    WidthRequest="120" />
+                    Source="happy.png"
+                    WidthRequest="80" />
                 <Label
                     HorizontalTextAlignment="Center"
-                    Text="Fear"
-                    TextColor="Black" />
+                    Text="Happy"
+                    TextColor="Black"
+                    HeightRequest="30"/>
             </StackLayout>
             <StackLayout
                 Grid.Row="1"
@@ -73,19 +77,20 @@
                 HorizontalOptions="Fill"
                 IsVisible="True"
                 Orientation="Vertical"
-                VerticalOptions="Fill">
+                VerticalOptions="Fill"
+                Padding="0,0,0,15">
                 <StackLayout.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding EmotionTappedCommand}" CommandParameter="disgust"/>
+                    <TapGestureRecognizer Command="{Binding EmotionTappedCommand}" CommandParameter="angry"/>
                 </StackLayout.GestureRecognizers>
                 <Image
                     BackgroundColor="Transparent"
-                    HeightRequest="120"
+                    HeightRequest="80"
                     IsVisible="True"
-                    Source="disgust.png"
-                    WidthRequest="120" />
+                    Source="angry.png"
+                    WidthRequest="80" />
                 <Label
                     HorizontalTextAlignment="Center"
-                    Text="Disgust"
+                    Text="Angry"
                     TextColor="Black" />
             </StackLayout>
             <StackLayout
@@ -94,20 +99,22 @@
                 HorizontalOptions="Fill"
                 IsVisible="True"
                 Orientation="Vertical"
-                VerticalOptions="Fill">
+                VerticalOptions="Fill"
+                Padding="0,0,0,15">
                 <StackLayout.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding EmotionTappedCommand}" CommandParameter="sad"/>
+                    <TapGestureRecognizer Command="{Binding EmotionTappedCommand}" CommandParameter="confused"/>
                 </StackLayout.GestureRecognizers>
                 <Image
                     BackgroundColor="Transparent"
-                    HeightRequest="120"
+                    HeightRequest="80"
                     IsVisible="True"
-                    Source="sad.png"
-                    WidthRequest="120" />
+                    Source="confused.png"
+                    WidthRequest="80" />
                 <Label
                     HorizontalTextAlignment="Center"
-                    Text="Sad"
-                    TextColor="Black" />
+                    Text="Confused"
+                    TextColor="Black"
+                    HeightRequest="30"/>
             </StackLayout>
             <StackLayout
                 Grid.Row="2"
@@ -117,18 +124,85 @@
                 Orientation="Vertical"
                 VerticalOptions="Fill">
                 <StackLayout.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding EmotionTappedCommand}" CommandParameter="anger"/>
+                    <TapGestureRecognizer Command="{Binding EmotionTappedCommand}" CommandParameter="crying"/>
                 </StackLayout.GestureRecognizers>
                 <Image
                     BackgroundColor="Transparent"
-                    HeightRequest="120"
+                    HeightRequest="80"
                     IsVisible="True"
-                    Source="anger.png"
-                    WidthRequest="120" />
+                    Source="crying.png"
+                    WidthRequest="80" />
                 <Label
                     HorizontalTextAlignment="Center"
-                    Text="Anger"
-                    TextColor="Black" />
+                    Text="Crying"
+                    TextColor="Black"
+                    HeightRequest="30"/>
+            </StackLayout>
+            <StackLayout
+                Grid.Row="2"
+                Grid.Column="1"
+                HorizontalOptions="Fill"
+                IsVisible="True"
+                Orientation="Vertical"
+                VerticalOptions="Fill">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding EmotionTappedCommand}" CommandParameter="disappointed"/>
+                </StackLayout.GestureRecognizers>
+                <Image
+                    BackgroundColor="Transparent"
+                    HeightRequest="80"
+                    IsVisible="True"
+                    Source="disappointed.png"
+                    WidthRequest="80" />
+                <Label
+                    HorizontalTextAlignment="Center"
+                    Text="Disappointed"
+                    TextColor="Black"
+                    HeightRequest="30"/>
+            </StackLayout>
+            <StackLayout
+                Grid.Row="3"
+                Grid.Column="0"
+                HorizontalOptions="Fill"
+                IsVisible="True"
+                Orientation="Vertical"
+                VerticalOptions="Fill">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding EmotionTappedCommand}" CommandParameter="scared"/>
+                </StackLayout.GestureRecognizers>
+                <Image
+                    BackgroundColor="Transparent"
+                    HeightRequest="80"
+                    IsVisible="True"
+                    Source="scared.png"
+                    WidthRequest="80" />
+                <Label
+                    HorizontalTextAlignment="Center"
+                    Text="Scared"
+                    TextColor="Black"
+                    HeightRequest="30"/>
+            </StackLayout>
+            <StackLayout
+                Grid.Row="3"
+                Grid.Column="1"
+                HorizontalOptions="Fill"
+                IsVisible="True"
+                Orientation="Vertical"
+                VerticalOptions="Fill">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding EmotionTappedCommand}" CommandParameter="tired"/>
+                </StackLayout.GestureRecognizers>
+                <Image
+                    BackgroundColor="Transparent"
+                    HeightRequest="80"
+                    IsVisible="True"
+                    Source="tired.png"
+                    WidthRequest="80" />
+                <Label
+                    HorizontalTextAlignment="Center"
+                    Text="Tired"
+                    TextColor="Black"
+                    HeightRequest="30"/>
             </StackLayout>
         </Grid>
     </StackLayout>

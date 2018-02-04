@@ -3,22 +3,50 @@ using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using CaptureEmotion.Settings;
+using Prism.Navigation;
+using Xamarin.Forms;
 
 namespace CaptureEmotion.ViewModels
 {
-	public class QuotePageViewModel : BindableBase
+	public class QuotePageViewModel : BindableBase, INavigationAware
 	{
         public List<Quote> Quotes = new List<Quote>();
+	    private readonly int _randomColor;
+	    private readonly int _randomQuote;
         public QuotePageViewModel()
         {
             CreateQuotes();
+            Random rnd = new Random();
+            _randomColor = rnd.Next(0, 14);
+            _randomQuote = rnd.Next(0, 30);
+
         }
+
+        private string[] colorsArray = new string[] { "#99D2CB", "#EBD494", "#D0F4E9", "#A4243B", "#E26D5A", "#BFB76F", "#46512C", "#F5D48B", "#A3844A", "#67905C", "#CE8B86", "#BB3F5A", "#EE5B5D", "#49B28A", "#6E7F85" };
+
+        public Color RandomColor
+	    {
+	        get
+	        {
+                var converter = new ColorTypeConverter();
+	            return (Color) converter.ConvertFromInvariantString(colorsArray[_randomColor]);
+	        }
+	    }
+
+        public string QuoteText
+        {
+            get { return Quotes[_randomQuote].QuoteText; }
+        }
+
+	    public string Author
+	    {
+	        get { return Quotes[_randomQuote].Author; }
+	    }
 
 	    private void CreateQuotes()
 	    {
 	        Quotes.Add(new Quote{QuoteText = "The cost of starting over is being willing to let go.", Author = "Guy Finley" });
-	        Quotes.Add(new Quote { QuoteText = "Let others lead small lives, but not you. Let others argue over small things, but not you. Let others cry over small hurts, but not you. Let others leave their future in someone else’s hands, but not you.", Author = "Jim Rohn" });
-	        Quotes.Add(new Quote { QuoteText = "If you don't know anything about computers, just remember that they are machines that do exactly what you tell them but often surprise you in the result", Author = "Richard Dawkins" });
 	        Quotes.Add(new Quote { QuoteText = "My psychiatrist told me I was crazy and I said I want a second opinion. He said okay, you're ugly too", Author = "Rodney Dangerfield" });
 	        Quotes.Add(new Quote { QuoteText = "Age is of no importance unless you’re a cheese.", Author = "Billie Burke" });
 	        Quotes.Add(new Quote { QuoteText = "Be nice to people on your way up because you meet them on your way down.", Author = "Jimmy Durante" });
@@ -45,77 +73,24 @@ namespace CaptureEmotion.ViewModels
 	        Quotes.Add(new Quote { QuoteText = "If you're too open-minded; your brains will fall out.", Author = "Lawrence Ferlinghetti" });
 	        Quotes.Add(new Quote { QuoteText = "The man who views the world at 50 the same as he did at 20 has wasted 30 years of his life.", Author = "Muhammed Ali, US boxer" });
 	        Quotes.Add(new Quote { QuoteText = "If I had my life to live over again, I’d be a plumber.", Author = "Albert Einstein" });
-	        Quotes.Add(new Quote { QuoteText = "Live life to the fullest... think of all the people on the Titanic who passed up chocolate dessert.", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "Tell a man there are 300 billion stars in the universe and he'll believe you. Tell him a bench has wet paint on it and he'll have to touch it to be sure. ", Author = "Murphy's Law" });
+	        Quotes.Add(new Quote { QuoteText = "Live life to the fullest... think of all the people on the Titanic who passed up chocolate dessert.", Author = "Unknown" });
 	        Quotes.Add(new Quote { QuoteText = "Be yourself; everyone else is already taken.", Author = "Oscar Wilde" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-	        Quotes.Add(new Quote { QuoteText = "", Author = "" });
-        }
+	    }
+
+	    public void OnNavigatedFrom(NavigationParameters parameters)
+	    {
+            parameters.Add(Constants.GoBack, true);
+	    }
+
+	    public void OnNavigatedTo(NavigationParameters parameters)
+	    {
+
+	    }
+
+	    public void OnNavigatingTo(NavigationParameters parameters)
+	    {
+
+	    }
 	}
 
     public class Quote

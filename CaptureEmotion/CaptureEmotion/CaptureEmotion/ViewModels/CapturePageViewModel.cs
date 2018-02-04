@@ -48,13 +48,13 @@ namespace CaptureEmotion.ViewModels
 	        answer.MoreDetailsEntered = moreDetailsEntered;
 	        if (moreDetailsEntered)
 	        {
-                var parameters = new NavigationParameters{{Constants.Answer, answer}};
+                var parameters = new NavigationParameters{{Constants.Answer, answer},{Constants.Title,$"Feeling {obj}. Because..."}};
 	            await _navigationService.NavigateAsync(Constants.CommentsPage, parameters);
 	        }
 	        else
 	        {
 	            _realmService.SaveAnswer(answer);
-	            await _navigationService.NavigateAsync(Constants.TimelinePage);
+	            await _navigationService.NavigateAsync(Constants.QuotePage);
 	        }
             
         }

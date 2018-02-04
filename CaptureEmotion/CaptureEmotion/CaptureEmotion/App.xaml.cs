@@ -25,7 +25,7 @@ namespace CaptureEmotion
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/CapturePage");
+            await NavigationService.NavigateAsync("RootPage/CapturePage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -39,6 +39,15 @@ namespace CaptureEmotion
             containerRegistry.Register<IRealmService,RealmService>();
             containerRegistry.RegisterForNavigation<CommentsPage>();
             containerRegistry.RegisterForNavigation<TimelinePage>();
+            containerRegistry.RegisterForNavigation<RootPage>();
+        }
+    }
+
+    class RootPage : NavigationPage
+    {
+        public RootPage()
+        {
+                BarBackgroundColor = Color.BlueViolet;
         }
     }
 }

@@ -8,5 +8,11 @@ namespace CaptureEmotion.Views
         {
             InitializeComponent();
         }
+
+        protected override bool OnBackButtonPressed()
+        {
+            Navigation.PopToRootAsync();
+            return base.OnBackButtonPressed();
+        }
     }
 }

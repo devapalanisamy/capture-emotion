@@ -9,5 +9,11 @@
         public const string CommentsPage = "CommentsPage";
         public const string TimelinePage = "TimelinePage";
         public const string Answer = "Answer";
+        public const string Title = "Title";
+        public const string QuotePage = "QuotePage";
+
+        public const string RootQuotePage = "/NavigationPage/CapturePage/QuotePage";
+
+        public const string GoBack = "GoBack";
     }
 }

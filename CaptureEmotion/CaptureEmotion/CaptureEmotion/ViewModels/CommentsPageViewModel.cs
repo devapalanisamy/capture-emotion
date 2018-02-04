@@ -21,6 +21,14 @@ namespace CaptureEmotion.ViewModels
             _navigationService = navigationService;
         }
 
+	    private string _title;
+
+	    public string Title
+	    {
+	        get { return _title; }
+	        set { SetProperty(ref _title, value); }
+	    }
+
 	    private string _comment;
 
 	    public string Comment
@@ -48,18 +56,31 @@ namespace CaptureEmotion.ViewModels
 	    {
 	        _answered.MoreDetails = Comment;
             _realmService.SaveAnswer(_answered);
-	        await _navigationService.GoBackAsync();
+	        await _navigationService.NavigateAsync(Constants.QuotePage);
 	    }
 
 	    public void OnNavigatedFrom(NavigationParameters parameters)
 	    {
 	    }
 
-	    public void OnNavigatedTo(NavigationParameters parameters)
+	    public async void OnNavigatedTo(NavigationParameters parameters)
 	    {
 	        if (parameters.ContainsKey(Constants.Answer))
 	        {
 	            _answered = (Answered) parameters[Constants.Answer];
+	        }
+
+	        if (parameters.ContainsKey(Constants.Title))
+	        {
+	            Title = (string) parameters[Constants.Title];
+	        }
+
+	        if (parameters.ContainsKey(Constants.GoBack))
+	        {
+	            if ((bool) parameters[Constants.GoBack])
+	            {
+	               await _navigationService.GoBackAsync();
+	            }
 	        }
 	    }
 

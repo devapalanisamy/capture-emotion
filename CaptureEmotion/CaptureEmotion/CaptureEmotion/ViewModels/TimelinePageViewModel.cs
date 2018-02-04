@@ -15,7 +15,9 @@ namespace CaptureEmotion.ViewModels
         public TimelinePageViewModel(IRealmService realmService)
         {
             _realmService = realmService;
-            AnswersCollection = new ObservableCollection<Answered>(_realmService.GetAllAnswers());
+            var list = _realmService.GetAllAnswers().ToList();
+            list.Reverse();
+            AnswersCollection = new ObservableCollection<Answered>(list);
         }
 
 	    private ObservableCollection<Answered> _answersCollection;
