@@ -207,6 +207,6 @@
         </Grid>
     </StackLayout>
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Timeline" Command="{Binding TimelineTappedCommand}" />
+        <ToolbarItem Text="Timeline" Command="{Binding TimelineTappedCommand}"/>
     </ContentPage.ToolbarItems>
 </ContentPage>

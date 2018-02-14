@@ -48,6 +48,7 @@ namespace CaptureEmotion
         public RootPage()
         {
                 BarBackgroundColor = Color.BlueViolet;
+                BarTextColor = Color.White;
         }
     }
 }

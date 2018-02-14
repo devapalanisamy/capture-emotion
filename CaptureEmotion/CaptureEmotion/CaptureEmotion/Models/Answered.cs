@@ -18,6 +18,10 @@ namespace CaptureEmotion.Models
         }
 
         public string Emotion { get; set; }
+        public string EmotionImage
+        {
+            get { return $"{Emotion}.png"; }
+        }
 
         public bool IsDetailsVisible
         {
